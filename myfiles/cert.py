@@ -138,9 +138,9 @@ parser.add_argument('-i', '--input', type=str, default='output.json', help='Inpu
 parser.add_argument('-o', '--output', type=str, default='output.csv', help='Output CSV file')
 args = parser.parse_args()
 
-with open('args.input', 'r') as file:
+with open(args.input, 'r') as file:
     data = file.readlines()[:]
-    with open('args.output', 'w', newline='') as csv_file:
+    with open(args.output, 'w', newline='') as csv_file:
         writer = csv.writer(csv_file)
         writer.writerow(csv_fields)
         
