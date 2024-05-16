@@ -34,3 +34,6 @@ This repository contains scripts to collect TLS information from a list of IPs a
     Here, the `-i` argument specifies the input JSON file, and `-o` specifies the output CSV file.
 
 6. The output data is saved into the `sample_output.csv` file in the `myfiles` folder.
+
+**NOTE:** 
+- Make sure to replace sample_input.txt and sample_output.json with your actual input and output filenames if they differ. Additionally, ensure that jq are properly installed and available in your environment.
