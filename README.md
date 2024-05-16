@@ -12,14 +12,14 @@ This repository contains scripts to collect TLS information from a list of IPs a
     ```
 
 2. Copy the file `input.txt`, containing the list of IPs, into the `myfiles` folder within the `certificate_telemetry` directory. Sample input examples are provided in the `myfiles` folder.
-    ![sample input](screenshots/Screenshot1.jpg)
+    ![sample input](screenshots/Screenshot1.png)
 
 4. Run the following command to collect TLS information using `zgrab2` and `jq`, and save the output as JSON:
 
     ```bash
     cat myfiles/sample_input.txt | ./zgrab2 http -p 443 --use-https | jq -c  'select(.data.http.result.response.request.tls_log != null) | {ip: .ip, tls_log: .data.http.result.response.request.tls_log}' > myfiles/sample_output.json
     ```
-![](screenshots/Screenshot2.jpg)
+![](screenshots/Screenshot2.png)
 5. Navigate to the `myfiles` directory:
 
     ```bash
@@ -34,7 +34,7 @@ This repository contains scripts to collect TLS information from a list of IPs a
 
     Here, the `-i` argument specifies the input JSON file, and `-o` specifies the output CSV file.
    
-    ![](screenshots/Screenshot3.jpg)
+    ![](screenshots/Screenshot3.png)
 8. The output data is saved into the `sample_output.csv` file in the `myfiles` folder.
 
 **NOTE:** 
