@@ -1,0 +1,10 @@
+echo www.google.com | ./zgrab2 http -p 443 --use-https | jq '.data.http.result.response.request.tls_log'
+
+openssl s_client -connect <IP_address>:443
+
+cat myfiles/Data/ips | ./zgrab2 http -p 443 --use-https | jq -c  'select(.data.http.result.response.request.tls_log != null) | {ip: .ip, tls_log: .data.http.result.response.request.tls_log}' > myfiles/output.json
+
+python3 cert.py -i output.json -o output.csv
+
+
+
